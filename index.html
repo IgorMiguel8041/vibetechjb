@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeTech JB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <button id="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+        <h1>VibeTech JB</h1>
+        <p class="slogan">Inovação que Conecta, Tecnologia que Inspira.</p>
+        <div class="search-container">
+            <button id="search-btn" onclick="toggleSearch()">🔍</button>
+            <input type="text" id="search-box" placeholder="Buscar produto..." />
+        </div>
+    </header>
+
+    <section class="promotions">
+        <div class="promotion-container">
+            <button class="nav-btn" id="prev-btn">❮</button>
+            <img id="promo-image" src="img/RTX 4090 R$ 9,99.jpg" alt="Promoção" />
+            <button class="nav-btn" id="next-btn">❯</button>
+        </div>
+    </section>
+    
+
+    <!-- Menu Lateral -->
+    <nav id="side-menu" class="side-menu">
+        <div class="profile">
+            <img src="img/belomem.jpeg" alt="Foto de perfil">
+            <p>Nome do Usuário</p>
+        </div>
+        <ul class="menu-options">
+            <li>Minhas Compras</li>
+            <li>Configurações</li>
+            <li>Favoritos</li>
+            <li>Ajuda</li>
+            <li>Sobre</li>
+        </ul>
+    </nav>
+
+    <script>
+        // Alterna o menu ao clicar no botão
+        function toggleMenu() {
+            var sideMenu = document.getElementById('side-menu');
+            if (sideMenu.style.left === '-250px' || sideMenu.style.left === '') {
+                sideMenu.style.left = '0';
+            } else {
+                sideMenu.style.left = '-250px';
+            }
+        }
+
+        // Fecha o menu se o clique ocorrer fora dele
+        function closeMenu(event) {
+            var sideMenu = document.getElementById('side-menu');
+            var menuButton = document.getElementById('menu-btn');
+            if (!sideMenu.contains(event.target) && event.target !== menuButton) {
+                sideMenu.style.left = '-250px';
+            }
+        }
+
+        // Alterna a barra de pesquisa
+        function toggleSearch() {
+            var searchBox = document.getElementById('search-box');
+            if (searchBox.style.display === 'none' || searchBox.style.display === '') {
+                searchBox.style.display = 'inline-block';
+            } else {
+                searchBox.style.display = 'none';
+            }
+        }
+
+        // Adiciona um evento de clique ao documento para fechar o menu
+        document.addEventListener('click', closeMenu);
+    </script>
+
+<script>
+    const images = [
+        'img/RTX 4090 R$ 9,99.jpg',
+        'img/MOUSE TENDINITE R$499,99.jpg',
+        'img/Aiphon 3 Usado R$100,00.jpg'
+    ];
+
+    let currentIndex = 0;
+
+    // Função para mudar a imagem
+    function changeImage() {
+        const promoImage = document.getElementById('promo-image');
+        promoImage.classList.remove('active'); // Remove a classe para iniciar a transição
+
+        setTimeout(() => { // Aguarda a transição terminar
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            promoImage.src = images[currentIndex];
+            promoImage.classList.add('active'); // Adiciona a classe novamente
+        }, 500); // Espera o tempo da transição (0.5s) para mudar a imagem
+    }
+
+    // Eventos dos botões
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        const promoImage = document.getElementById('promo-image');
+        promoImage.classList.remove('active'); // Remove a classe para iniciar a transição
+
+        setTimeout(() => {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            promoImage.src = images[currentIndex];
+            promoImage.classList.add('active'); // Adiciona a classe novamente
+        }, 500); // Espera o tempo da transição (0.5s) para mudar a imagem
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+        changeImage();
+    });
+
+    // Trocar a imagem automaticamente a cada 10 segundos
+    setInterval(changeImage, 6000); // 6000 milissegundos = 10 segundos
+</script>
+
+
+    <section class="products">
+        <h2>Produtos Normais</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="img/RTX 4090 R$ 9,99.jpg" alt="Produto 1">
+                <h3>RTX 4090 OLIGINAL</h3>
+                <p>R$ 9,99</p>
+            </div>
+            <div class="product-item">
+                <img src="img/MOUSE TENDINITE R$499,99.jpg" alt="Produto 2">
+                <h3>MOUSE TENDINITE</h3>
+                <p>R$ 499,99</p>
+            </div>
+            <div class="product-item">
+                <img src="img/Aiphon 3 Usado R$100,00.jpg" alt="Produto 3">
+                <h3>AIPHON 3 USADO</h3>
+                <p>R$ 100,00</p>
+            </div>
+            <div class="product-item">
+                <img src="img/FONE.webp" alt="Produto 4">
+                <h3>FONE BLUETOOTH OLIGINAL</h3>
+                <p>R$ 229,90</p>
+            </div>
+            <div class="product-item">
+                <img src="img/PC GAMER FREEFIRE NO UTERO.jpg" alt="Produto 5">
+                <h3>PC GAMER RODA FREE FIRE NO UTERO</h3>
+                <p>R$ 900,00</p>
+            </div>
+            <div class="product-item">
+                <img src="img/teclado GUEIMER.png" alt="Produto 6">
+                <h3>TECLADO GAMER RAZER COM LED</h3>
+                <p>R$ 349,99</p>
+            </div>
+            <div class="product-item">
+                <img src="img/ps2desbloqueadocomopl.jpeg" alt="Produto 7">
+                <h3>PS2 COMPLETO COM OPL</h3>
+                <p>R$ 500,00</p>
+            </div>
+            <div class="product-item">
+                <img src="img/POWERBANK20MIL MHA.jpg" alt="Produto 8">
+                <h3>POWERBANK 20.000 Mha</h3>
+                <p>R$ 120.00</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>VibeTech JB &copy; 2024 | CNPJ: 12.345.678/0001-90 | Endereço: Rua Fictícia, 123 - Cidade Inexistente</p>
+            <p class="hidden-info">NÃO TEM GALANTIA, COMPLOU POLQUE QUIS</p>
+        </div>
+    </footer>
+
+</body>
+</html>

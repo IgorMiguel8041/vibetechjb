@@ -1,0 +1,254 @@
+/* Define a cor de fundo para todo o site */
+body {
+    background-color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #007BFF; /* Azul padrão */
+    padding: 35px;
+    text-align: center;
+    position: relative;
+}
+
+/* Estilo para o título principal no cabeçalho */
+header h1 {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif; /* Fonte mais "maneira" */
+}
+header p {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+
+/* Estilo para o botão de menu */
+.menu-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#menu-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Estilo para o botão de pesquisa */
+.search-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#search-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Estilo para a caixa de pesquisa */
+#search-box {
+    display: none; /* Inicialmente oculta */
+    padding: 5px;
+    font-size: 16px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para o menu lateral */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Escondido inicialmente */
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    color: #333;
+    padding-top: 60px;
+    transition: left 0.3s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o perfil dentro do menu */
+.side-menu .profile {
+    text-align: center;
+    padding: 20px;
+}
+
+.side-menu .profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.side-menu .profile p {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Estilo para as opções do menu */
+.side-menu .menu-options {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu .menu-options li {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.side-menu .menu-options li:hover {
+    background-color: #f0f0f0;
+}
+
+.promotions {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.promotion-container {
+    position: relative;
+    display: inline-block;
+}
+
+.promotion-container img {
+    width: 600px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas para as imagens */
+}
+
+.nav-btn {
+    background-color: #007BFF; /* Azul para as setas */
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#prev-btn {
+    left: -40px; /* Ajuste a posição conforme necessário */
+}
+
+#next-btn {
+    right: -40px; /* Ajuste a posição conforme necessário */
+}
+
+.nav-btn:hover {
+    background-color: #0056b3; /* Escurece o azul ao passar o mouse */
+}
+
+footer {
+    background-color: #007BFF; /* Azul */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Estilo para o conteúdo do footer */
+.footer-content {
+    max-width: 800px; /* Limita a largura do conteúdo */
+    margin: auto; /* Centraliza o conteúdo */
+}
+
+/* Estilo para a informação escondida */
+.hidden-info {
+    display: none; /* Inicialmente escondido */
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+/* Exibir a informação escondida ao passar o mouse */
+footer:hover .hidden-info {
+    display: block; /* Mostra ao passar o mouse */
+}
+.products {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', sans-serif; /* Fonte do título */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cria um grid responsivo */
+    gap: 20px; /* Espaçamento entre os quadrados */
+}
+
+.product-item {
+    background-color: #f9f9f9; /* Fundo dos produtos */
+    border: 1px solid #ccc; /* Borda dos quadrados */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    transition: transform 0.3s; /* Efeito ao passar o mouse */
+}
+
+.product-item:hover {
+    transform: translateY(-5px); /* Eleva o quadrado ao passar o mouse */
+}
+
+.product-item img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do quadrado */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas para a imagem */
+}
+
+.product-item h3 {
+    font-size: 18px; /* Tamanho do nome do produto */
+    margin: 10px 0 5px; /* Margem em cima e embaixo */
+}
+
+.product-item p {
+    font-size: 16px; /* Tamanho do preço */
+    color: #007BFF; /* Cor do preço */
+}
+
+.promo-container {
+    position: relative;
+    width: 100%; /* Ajuste conforme necessário */
+    height: auto; /* Ajuste conforme necessário */
+}
+
+.promo-container img {
+    position: absolute;
+    width: 100%; /* Ajuste conforme necessário */
+    height: auto; /* Ajuste conforme necessário */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0; /* Começa invisível */
+}
+
+.promo-container img.active {
+    opacity: 1; /* Mostra a imagem ativa */
+    transform: scale(1.05); /* Efeito de "massa" */
+}
+
